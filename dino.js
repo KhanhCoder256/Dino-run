@@ -4,7 +4,6 @@
   const WORLD_HEIGHT = 144;
   const WORLD_WIDTH = 256;
 
-  //// CLASSES ////
 
   var Animation = function(frame_set, delay) {
 
