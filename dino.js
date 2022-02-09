@@ -108,22 +108,20 @@
 
   var Meteor = function(x, y) {
 
-    this.alive = true;// Meteor dies when it goes offscreen.
+    this.alive = true;
     this.animation = new Animation(display.tile_sheet.frame_sets[1], 8);
     this.grounded = false;
-    this.smoke = false;// smoke values are used for spawning smoke particles.
+    this.smoke = false;
     this.smoke_count = 0;
     this.smoke_delay = Math.floor(Math.random() * 10 + 5);
     this.height = Math.floor(Math.random() * 16 + 24); this.width = this.height;
     this.x = x; this.y = y - this.height * 0.5;
-    let direction = Math.PI * 1.75 + Math.random() * Math.PI * 0.1;// The trajectory.
+    let direction = Math.PI * 1.75 + Math.random() * Math.PI * 0.1;
     this.x_velocity = Math.cos(direction) * 3; this.y_velocity = -Math.sin(direction) * 3;
 
   };
 
-  /* All game objects are expected to have collideWorld and CollideObject functions,
-  as well as update and reset functions. If this were a strongly typed language, I
-  would be using a base class called GameObject or something. */
+
   Meteor.prototype = {
 
     constructor:Meteor,
